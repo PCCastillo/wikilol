@@ -1,0 +1,200 @@
+// Variables
+$primary-dark: #0a1428;
+$secondary-dark: #091428;
+$accent-gold: #c8aa6e;
+$accent-dark-gold: #785a28;
+$text-beige: #cdbe91;
+$text-light: #f0e6d2;
+$text-dark: #5b5a56;
+$form-bg: #061c36;
+$input-bg: #1e282d;
+$border-gold: #c8aa6e;
+$shadow-dark: rgba(0, 0, 0, 0.5);
+
+// Mixin para sombras doradas
+@mixin gold-shadow($size) {
+  box-shadow: 0 0 $size rgba(200, 170, 110, 0.4);
+}
+
+// Mixin para flexbox centrado
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Estilos generales
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Beaufort for LOL', 'Times New Roman', serif;
+  background-color: $primary-dark;
+  color: $text-beige;
+  line-height: 1.6;
+  background-image: 
+      radial-gradient(circle at 20% 30%, rgba(12, 23, 42, 0.7) 0%, transparent 40%),
+      radial-gradient(circle at 80% 70%, rgba(12, 23, 42, 0.7) 0%, transparent 40%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+// Navegación
+.navbar {
+  background-color: $secondary-dark !important;
+  border-bottom: 2px solid $accent-dark-gold;
+  box-shadow: 0 4px 12px $shadow-dark;
+  
+  .navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: $accent-gold !important;
+  }
+  
+  .nav-link {
+    color: $text-beige !important;
+    transition: all 0.3s ease;
+    
+    &:hover, &.active {
+      color: $accent-gold !important;
+      @include gold-shadow(8px);
+    }
+  }
+}
+
+// Contenido principal
+main {
+  flex: 1;
+}
+
+.contact-info {
+  .bi {
+    color: $accent-gold;
+    font-size: 1.5rem;
+    min-width: 30px;
+  }
+  
+  p {
+    margin-bottom: 0;
+    padding: 0.5rem;
+    background-color: rgba(6, 28, 54, 0.4);
+    border-radius: 4px;
+    border-left: 3px solid $accent-gold;
+  }
+}
+
+// Tabla
+.table {
+  color: $text-beige;
+  border-color: $accent-dark-gold;
+  
+  thead th {
+    background-color: $secondary-dark;
+    color: $accent-gold;
+    border-color: $accent-dark-gold;
+  }
+  
+  tbody tr {
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background-color: lighten($secondary-dark, 5%) !important;
+    }
+  }
+}
+
+// Formulario
+form {
+  background: linear-gradient(145deg, $form-bg, $secondary-dark);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid $accent-dark-gold;
+  box-shadow: 0 4px 20px $shadow-dark;
+}
+
+.form-label {
+  color: $accent-gold;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.form-control, .form-select {
+  background-color: $input-bg;
+  border: 1px solid $accent-dark-gold;
+  color: $text-light;
+  transition: all 0.3s ease;
+  
+  &:focus {
+    background-color: $input-bg;
+    border-color: $accent-gold;
+    color: $text-light;
+    @include gold-shadow(8px);
+  }
+  
+  &::placeholder {
+    color: $text-dark;
+  }
+}
+
+.btn-primary {
+  background: linear-gradient(to bottom, $accent-gold, $accent-dark-gold);
+  border: none;
+  color: $primary-dark;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background: linear-gradient(to bottom, #d1b881, #8a6c30);
+    @include gold-shadow(12px);
+  }
+}
+
+// Footer
+footer {
+  background-color: $secondary-dark !important;
+  border-top: 2px solid $accent-dark-gold;
+}
+
+// Responsive
+@media (max-width: 768px) {
+  main {
+    padding: 1rem;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+  
+  aside, section {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  
+  form {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .contact-info {
+    .bi {
+      font-size: 1.2rem;
+    }
+  }
+  
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}

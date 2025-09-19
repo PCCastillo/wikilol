@@ -1,46 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - WikiLoL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styleContacto.css">
 </head>
 <body>
-     <nav>
-        <a href="index.html">Personajes</a>
-        <a href="contacto.html">Contacto</a>
-        <a href="login.html">Iniciar Sesión</a>
-        <a href="signin.html">Registrarse</a>
-    </nav> 
-    <aside>
-        <h1>Contáctanos</h1>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://placehold.co/40x40/212529/FFFFFF?text=W" alt="Logo" class="d-inline-block align-text-top me-2">
+                    WikiLoL
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Personajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="debate.html">Debate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.html">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
 
-        <img id="logo-email"><p>correo@correo.com</p>
-        <img id="logo-telefono"><p>+51 123456789</p>
-        <img id="logo-ubicacion"><p>Parkway Gardens Apartments, Chicago, IL 60637, EE. UU.</p>
-    </aside>
-    <main>
-        <form>
-            <div class="mb-3">
-          <label for="usuario">Nombre:</label>
-          <input type="text" class="form-label" required placeholder="Ingrese su nombre de usuario">
+    <main class="container my-5">
+        <div class="row">
+            <aside class="col-md-5">
+                <section>
+                    <h1 class="mb-4">Contáctanos</h1>
+                    <div class="contact-info">
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-envelope me-3"></i>
+                            <p class="mb-0">correo@correo.com</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-telephone me-3"></i>
+                            <p class="mb-0">+51 123456789</p>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <i class="bi bi-geo-alt me-3"></i>
+                            <p class="mb-0">Parkway Gardens Apartments, Chicago, IL 60637, EE. UU.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mt-5">
+                    <h2>Equipo de Desarrollo</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Nombre</th>
+                                    <th>Rol</th>
+                                    <th>Especialidad</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Pedro Carrasco</td>
+                                    <td>Frontend</td>
+                                    <td>UI/UX Design</td>
+                                </tr>
+                                <tr>
+                                    <td>Franagan Lazo</td>
+                                    <td>Backend</td>
+                                    <td>JS/CSS/HTML/SCSS/BOOTSTRAP</td>
+                                </tr>
+                                <tr>
+                                    <td>Marcelo Ramos</td>
+                                    <td>Fullstack</td>
+                                    <td>JavaScript</td>
+                                </tr>
+                                <tr>
+                                    <td>Matias Valdivia</td>
+                                    <td>Frontend</td>
+                                    <td>CSS/Animaciones</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </aside>
+
+            <section class="col-md-7">
+                <h2 class="mb-4">Envía un mensaje</h2>
+                <form id="contactForm">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="nombre" class="form-label">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" required placeholder="Ingrese su nombre">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="apellido" class="form-label">Apellido:</label>
+                            <input type="text" class="form-control" id="apellido" required placeholder="Ingrese su apellido">
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="correo" class="form-label">Correo:</label>
+                        <input type="email" class="form-control" id="correo" required placeholder="Ingrese su correo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="asunto" class="form-label">Asunto:</label>
+                        <select class="form-select" id="asunto" required>
+                            <option value="">Seleccione un asunto</option>
+                            <option value="consulta">Consulta general</option>
+                            <option value="soporte">Soporte técnico</option>
+                            <option value="sugerencia">Sugerencia</option>
+                            <option value="reporte">Reportar error</option>
+                            <option value="otros">Otros</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" rows="5" required placeholder="Ingrese su mensaje"></textarea>
+                    </div>
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" class="form-check-input" id="newsletter">
+                        <label class="form-check-label" for="newsletter">Deseo suscribirme al newsletter</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                </form>
+            </section>
         </div>
-        <div class="mb-3">
-          <label for="correo">Correo:</label>
-          <input type="email" class="form-label" required placeholder="Ingrese su correo">
-        </div>
-        <div class="row g-3 align-items-center">
-          <label for="asunto">Asunto:</label>
-          <input type="text" class="form-label" required placeholder="Ingrese su contraseña">
-        </div>
-        <div class="row g-3 align-items-center">
-          <label for="asunto">Mensaje:</label>
-          <input type="text" class="form-label" required placeholder="Ingrese el mensaje">
-        </div>
-        <button type="submit" class="boton-login">Enviar</button>
-        </form>
     </main>
-    <footer> @niggateam - ballenitas CORP - all rights reserved</footer>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                © 2023 @ballenitasTEAM - ballenitas CORP - all rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/form-validation.js"></script>
 </body>
 </html>

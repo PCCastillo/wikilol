@@ -1,0 +1,15 @@
+{
+  "name": "lol-wiki",
+  "version": "1.0.0",
+  "description": "Wiki de League of Legends",
+  "main": "index.js",
+  "scripts": {
+    "sass:build": "sass scss:css --style compressed",
+    "sass:watch": "sass --watch scss:css"
+  },
+  "devDependencies": {
+    "sass": "^1.66.1"
+  },
+  "author": "ballenitasTEAM",
+  "license": "MIT"
+}

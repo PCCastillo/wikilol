@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Foro de debate sobre campeones de League of Legends">
+    <meta name="keywords" content="LOL, debate, foro, campeones, discusión">
+    <meta name="author" content="Pedro Carrasco, Franagan Lazo, Marcelo Ramos, Matias Valdivia">
+    <title>Foro - WikiLoL</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/foro.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="index.html">
+                    <img src="https://placehold.co/40x40/212529/FFFFFF?text=W" alt="Logo" class="d-inline-block align-text-top me-2">
+                    WikiLoL
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Personajes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="foro.html">Debate</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Iniciar Sesión</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="signin.html">Registrarse</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1 class="mb-4">--Foro--</h1>
+                <p class="lead">Discute estrategias, builds y todo sobre los campeones de League of Legends</p>
+                
+                <section class="debate-form mb-5">
+                    <h2 class="mb-3">Iniciar nuevo debate</h2>
+                    <form id="debateForm">
+                        <div class="mb-3">
+                            <label for="titulo" class="form-label">Título del debate:</label>
+                            <input type="text" class="form-control" id="titulo" required placeholder="Ej: Mejor build para Yasuo en la temporada 13">
+                        </div>
+                        <div class="mb-3">
+                            <label for="campeon" class="form-label">Campeón relacionado:</label>
+                            <select class="form-select" id="campeon" required>
+                                <option value="">Selecciona un campeón</option>
+                                <option value="yasuo">Yasuo</option>
+                                <option value="ahri">Ahri</option>
+                                <option value="darius">Darius</option>
+                                <option value="lux">Lux</option>
+                                <option value="lee sin">Lee Sin</option>
+                                <option value="jinx">Jinx</option>
+                                <option value="others">Otro</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="categoria" class="form-label">Categoría:</label>
+                            <select class="form-select" id="categoria" required>
+                                <option value="">Selecciona una categoría</option>
+                                <option value="builds">Builds y Objetos</option>
+                                <option value="estrategias">Estrategias</option>
+                                <option value="counters">Counters</option>
+                                <option value="habilidades">Habilidades y Combos</option>
+                                <option value="general">Discusión General</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label">Mensaje:</label>
+                            <textarea class="form-control" id="mensaje" rows="6" required placeholder="Escribe tu opinión o pregunta aquí..."></textarea>
+                            <div class="form-text">Mínimo 50 caracteres</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="tags" class="form-label">Etiquetas (separadas por comas):</label>
+                            <input type="text" class="form-control" id="tags" placeholder="Ej: mid lane, early game, teamfights">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Publicar debate</button>
+                    </form>
+                </section>
+
+                <section class="debates-list">
+                    <h2 class="mb-4">Debates recientes</h2>
+                    <div class="list-group">
+                        <div class="list-group-item debate-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">¿Cuál es el mejor counter para Darius en top?</h5>
+                                <small class="text-muted">Hace 2 horas</small>
+                            </div>
+                            <p class="mb-1">He estado teniendo problemas contra Darius últimamente, ¿algún campeón que lo counteree efectivamente?</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <div>
+                                    <span class="badge bg-primary me-1">top lane</span>
+                                    <span class="badge bg-info me-1">counters</span>
+                                    <span class="badge bg-secondary">Darius</span>
+                                </div>
+                                <small class="text-muted">Por: Invocador123</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item debate-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Build óptima para Ahri en parche 13.15</h5>
+                                <small class="text-muted">Hace 5 horas</small>
+                            </div>
+                            <p class="mb-1">Con los cambios recientes a los objetos AP, ¿cuál creen que es la build más efectiva para Ahri ahora?</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <div>
+                                    <span class="badge bg-primary me-1">mid lane</span>
+                                    <span class="badge bg-success me-1">builds</span>
+                                    <span class="badge bg-secondary">Ahri</span>
+                                </div>
+                                <small class="text-muted">Por: Mag0Master</small>
+                            </div>
+                        </div>
+                        <div class="list-group-item debate-item">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">¿Está Yasuo sobrevalorado?</h5>
+                                <small class="text-muted">Ayer</small>
+                            </div>
+                            <p class="mb-1">Siempre veo muchos Yasuo en ranked pero rara vez llevan el juego, ¿creen que está sobrevalorado o es solo mi experiencia?</p>
+                            <div class="d-flex justify-content-between align-items-center mt-2">
+                                <div>
+                                    <span class="badge bg-primary me-1">mid lane</span>
+                                    <span class="badge bg-warning me-1 text-dark">discusión</span>
+                                    <span class="badge bg-secondary">Yasuo</span>
+                                </div>
+                                <small class="text-muted">Por: CriticalPth</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-4">
+                <aside class="sidebar">
+                    <div class="card mb-4">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">Estadísticas del foro</h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Debates totales:</span>
+                                <strong>1,247</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Comentarios:</span>
+                                <strong>5,893</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Usuarios activos:</span>
+                                <strong>327</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">Campeones más debatidos</h5>
+                        </div>
+                        <div class="card-body">
+                            <ol class="list-group list-group-numbered">
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Yasuo</div>
+                                        128 debates
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">+15</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Ahri</div>
+                                        97 debates
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">+8</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Darius</div>
+                                        85 debates
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">+12</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Lee Sin</div>
+                                        76 debates
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">+5</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-start">
+                                    <div class="ms-2 me-auto">
+                                        <div class="fw-bold">Jinx</div>
+                                        68 debates
+                                    </div>
+                                    <span class="badge bg-primary rounded-pill">+7</span>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">Reglas del foro</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Mantén el respeto hacia otros usuarios</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Evita el spam y contenido repetitivo</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Publica en la categoría correcta</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Usa un título descriptivo</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>No compartas información personal</li>
+                            </ul>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="text-center">
+                © 2023 @ballenitasTEAM - ballenitas CORP - all rights reserved
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/debate.js"></script>
+</body>
+</html>
