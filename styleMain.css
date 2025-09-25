@@ -1,4 +1,4 @@
-/* Variables (equivalente a SASS variables) */
+/* Variables CSS (equivalente a variables SASS) */
 :root {
   --primary-color: #0a6cff;
   --secondary-color: #6c757d;
@@ -8,6 +8,7 @@
   --success-color: #198754;
   --warning-color: #ffc107;
   --info-color: #0dcaf0;
+  --purple-color: #6f42aa;
   --main-font: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   --transition: all 0.3s ease;
@@ -32,25 +33,60 @@ body {
   box-shadow: var(--box-shadow);
 }
 
-/* Tarjetas de campeones */
-.champion-card {
-  transition: var(--transition);
-  border: none;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+/* Estilos de la tabla de campeones */
+.champions-table {
+  background-color: white;
+  border-radius: 0.5rem;
   overflow: hidden;
-}
-
-.champion-card:hover {
-  transform: translateY(-5px);
   box-shadow: var(--box-shadow);
+  margin-bottom: 2rem;
 }
 
-.champion-card .card-img-top {
+.champions-table th {
+  background-color: var(--dark-color) !important;
+  color: white;
+  font-weight: 600;
+  border: none;
+  padding: 1rem;
+}
+
+.champions-table td {
+  padding: 1rem;
+  vertical-align: middle;
+  border-color: #dee2e6;
+}
+
+.champions-table tbody tr {
   transition: var(--transition);
 }
 
-.champion-card:hover .card-img-top {
-  transform: scale(1.05);
+.champions-table tbody tr:hover {
+  background-color: rgba(10, 108, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.champion-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  transition: var(--transition);
+}
+
+.champions-table tr:hover .champion-img {
+  transform: scale(1.1);
+  border-color: var(--danger-color);
+}
+
+/* Badges personalizados */
+.badge {
+  font-weight: 500;
+  padding: 0.5em 0.8em;
+}
+
+.bg-purple {
+  background-color: var(--purple-color) !important;
 }
 
 /* Tarjetas de clases */
@@ -75,9 +111,9 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-/* Badges */
-.badge {
-  font-weight: 500;
+.display-4 {
+  color: var(--dark-color);
+  font-weight: 800;
 }
 
 /* Footer */
@@ -124,8 +160,13 @@ footer a:hover {
     font-size: 2.5rem;
   }
   
-  .champion-card {
-    margin-bottom: 1.5rem;
+  .champions-table {
+    font-size: 0.9rem;
+  }
+  
+  .champion-img {
+    width: 45px;
+    height: 45px;
   }
 }
 
@@ -157,4 +198,32 @@ footer a:hover {
   100% {
     transform: translateX(100%);
   }
+}
+
+/* Estilo para tooltips personalizados (si se necesitan) */
+.tooltip-custom {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-custom .tooltip-text {
+  visibility: hidden;
+  width: 120px;
+  background-color: var(--dark-color);
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip-custom:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
