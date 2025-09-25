@@ -32,7 +32,5 @@ El diseño se centra en la estética y ambientación del videojuego, integrando 
 - **Node.js + npm** → Manejo de dependencias y compilación de SASS.  
 
 ##  Cómo ejecutar el proyecto
-1. Clonar o descargar este repositorio.  
-2. Instalar dependencias con:
-   ```bash
-   npm install
+1. Acceder al link
+2. https://wikilol.odramalac.work/wikilol/
